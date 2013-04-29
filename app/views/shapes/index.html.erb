@@ -1,0 +1,36 @@
+<div id="main">
+<h1>Listing shapes</h1>
+
+<table>
+  <% @shapes.each do |shape| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+        <td>
+          <%= image_tag(shape.image_url, class: 'list_image') %>
+        </td>
+
+        <td class="list_description">
+          <dl>
+            <dt><%= shape.title %></dt>
+            <dd><%= truncate(strip_tags(shape.text),
+                             length: 80) %></dd>
+          </dl>
+        </td>
+
+        <td class="list_actions">
+          <%= link_to 'Show', shape %><br/>
+          <% if current_user and current_user.admin %>
+          <%= link_to 'Edit', edit_shape_path(shape) %><br/>
+              <%= link_to 'Destroy', shape, :confirm => 'Are you sure?', :method => :delete %></td>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shape', new_shape_path %>
+  <p><%= will_paginate @shapes %></p>
+
+ </div>

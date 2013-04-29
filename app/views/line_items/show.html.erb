@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Shape:</b>
+  <%= @line_item.shape_id %>
+</p>
+
+<p>
+  <b>Row:</b>
+  <%= @line_item.row_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

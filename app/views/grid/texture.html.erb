@@ -1,0 +1,15 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="main">
+
+<% @shapes.each do |shape| %>
+    <div class="entry">
+      <%= link_to image_tag(shape.image_url), line_items_path(:shape_id => shape), :method => :post %>
+
+    </div>
+
+<% end %>
+
+</div>

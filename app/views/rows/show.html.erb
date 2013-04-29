@@ -1,0 +1,19 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="main" class="entry">
+
+
+
+   <% @row.line_items.each do |item| %>
+
+         <%= image_tag(item.shape.image_url) %>
+
+    <% end %>
+
+
+<%= button_to 'Empty Cow', @row, method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+</div>

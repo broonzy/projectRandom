@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @shape.title %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @shape.text %>
+</p>
+
+<p>
+  <b>Text type:</b>
+  <%= @shape.text_type %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @shape.image_url %>
+</p>
+
+<p>
+  <b>Shape type:</b>
+  <%= @shape.shape_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_shape_path(@shape) %> |
+<%= link_to 'Back', shapes_path %>

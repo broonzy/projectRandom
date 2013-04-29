@@ -1,0 +1,63 @@
+// Place all the styles related to the Store controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* START_HIGHLIGHT */
+.grid {
+  h1 {
+    margin: 0;
+    padding-bottom: 0.5em;
+    font:  150% sans-serif;
+    color: #226;
+    border-bottom: 3px dotted #77d;
+  }
+
+  /* An entry in the grid catalog */
+  .entry {
+    position:relative;
+    width:115px;
+    height:68px;
+    float:left;
+
+    //below from p110 is moving add to row btn
+    p, div.price_line {
+      margin-left: 100px;
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+
+      form, div {
+        display: inline;
+      }
+
+    img {
+      width: 115px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      position: absolute;
+    }
+
+    h3 {
+      font-size: 120%;
+      font-family: sans-serif;
+      margin-left: 150px;
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #227;
+    }
+
+    p, div.price_line {
+      margin-left: 150px;
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+
+      form, div {
+        display: inline;
+      }
+    }
+
+
+  }
+}
+/* END_HIGHLIGHT */
+
+}

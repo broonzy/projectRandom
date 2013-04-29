@@ -1,0 +1,1904 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (9.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (4.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 09:57:08', '2013-03-08 09:57:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 09:57:08', '2013-03-08 09:57:08', 298486374)
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mShape Load (0.3ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"image_url"=>"MyString", "shape_type"=>"MyString", "text"=>"MyText", "text_type"=>"MyString", "title"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Mar 2013 09:57:08 UTC +00:00], ["image_url", "MyString"], ["shape_type", "MyString"], ["text", "MyText"], ["text_type", "MyString"], ["title", "MyString"], ["updated_at", Fri, 08 Mar 2013 09:57:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (8.2ms)
+Completed 200 OK in 65ms (Views: 64.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"image_url"=>"MyString", "shape_type"=>"MyString", "text"=>"MyText", "text_type"=>"MyString", "title"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 10:56:04', '2013-03-08 10:56:04', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 10:56:04', '2013-03-08 10:56:04', 298486374)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"image_url"=>"MyString", "shape_type"=>"MyString", "text"=>"MyText", "text_type"=>"MyString", "title"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'MyString' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shapes/_form.html.erb (6.2ms)
+  Rendered shapes/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 60ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (3.2ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.0ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"image_url"=>"MyString", "shape_type"=>"MyString", "text"=>"MyText", "text_type"=>"MyString", "title"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'MyString' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shapes/_form.html.erb (5.6ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:03:37', '2013-03-08 11:03:37', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:03:37', '2013-03-08 11:03:37', 298486374)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Mar 2013 11:03:37 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 08 Mar 2013 11:03:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 52ms (ActiveRecord: 15.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "shapes" WHERE "shapes"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (8.3ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" 
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (2.8ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-08 11:03:37.392525' WHERE "shapes"."id" = 980190962
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:25:39', '2013-03-08 11:25:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:25:39', '2013-03-08 11:25:39', 298486374)
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:27:27', '2013-03-08 11:27:27', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:27:27', '2013-03-08 11:27:27', 298486374)
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'My Title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:31:38', '2013-03-08 11:31:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:31:38', '2013-03-08 11:31:38', 298486374)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 207281424)[0m
+SQLite3::SQLException: table shapes has no column named description: INSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 207281424)
+  [1m[35m (19.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 207281424)[0m
+SQLite3::SQLException: table shapes has no column named description: INSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:58:58', '2013-03-08 11:58:58', 207281424)
+  [1m[35m (115.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:59:17', '2013-03-08 11:59:17', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:59:17', '2013-03-08 11:59:17', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:59:17', '2013-03-08 11:59:17', 207281424)[0m
+SQLite3::SQLException: table shapes has no column named description: INSERT INTO "shapes" ("title", "description", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('colour_1', 'Go with the flow', 'fortune', 'colour_1.png', 'colour', '2013-03-08 11:59:17', '2013-03-08 11:59:17', 207281424)
+  [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:59:31', '2013-03-08 11:59:31', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 11:59:31', '2013-03-08 11:59:31', 298486374)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:19:39', '2013-03-08 15:19:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:19:39', '2013-03-08 15:19:39', 298486374)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:19:42', '2013-03-08 15:19:42', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:19:42', '2013-03-08 15:19:42', 298486374)
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GridController#index as HTML
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" ORDER BY title[0m
+  Rendered grid/index.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 140ms (Views: 139.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.2ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1[0m
+  [1m[35mSQL (34.0ms)[0m  INSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Mar 2013 15:19:42 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 08 Mar 2013 15:19:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 57ms (ActiveRecord: 34.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (8.5ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-08 15:19:42.714334' WHERE "shapes"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:30:01', '2013-03-08 15:30:01', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:30:01', '2013-03-08 15:30:01', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GridController#index as HTML
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" ORDER BY title[0m
+  Rendered grid/index.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 100ms (Views: 98.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.3ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1[0m
+  [1m[35mSQL (68.0ms)[0m  INSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Mar 2013 15:30:01 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 08 Mar 2013 15:30:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 94ms (ActiveRecord: 68.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (56.0ms)
+Completed 200 OK in 95ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-08 15:30:01.914833' WHERE "shapes"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:32:52', '2013-03-08 15:32:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-08 15:32:52', '2013-03-08 15:32:52', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animal', '2013-03-08 15:32:52', '2013-03-08 15:32:52', 207281424)[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GridController#index as HTML
+  [1m[35mShape Load (0.2ms)[0m  SELECT "shapes".* FROM "shapes" ORDER BY title
+  Rendered grid/index.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 117ms (Views: 116.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1
+  [1m[36mSQL (18.1ms)[0m  [1mINSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Mar 2013 15:32:52 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 08 Mar 2013 15:32:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 73ms (ActiveRecord: 18.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "shapes" WHERE "shapes"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (56.0ms)
+Completed 200 OK in 81ms (Views: 80.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" 
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-08 15:32:53.116401' WHERE "shapes"."id" = 980190962
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-15 12:04:56', '2013-03-15 12:04:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-15 12:04:56', '2013-03-15 12:04:56', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "rows"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-15 12:04:56', '2013-03-15 12:04:56', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-15 12:04:56', '2013-03-15 12:04:56', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-15 12:04:56', '2013-03-15 12:04:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-15 12:04:56', '2013-03-15 12:04:56', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animal', '2013-03-15 12:04:56', '2013-03-15 12:04:56', 207281424)[0m
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GridController#index as HTML
+  [1m[35mShape Load (0.3ms)[0m  SELECT "shapes".* FROM "shapes" ORDER BY RANDOM() LIMIT 49
+  Rendered grid/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 69ms (Views: 59.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+Processing by LineItemsController#create as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (40.3ms)[0m  INSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Fri, 15 Mar 2013 12:04:56 UTC +00:00], ["updated_at", Fri, 15 Mar 2013 12:04:56 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 46ms
+  [1m[35m (18.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+Processing by LineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered line_items/_form.html.erb (37.5ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#index as HTML
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" 
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#new as HTML
+  Rendered line_items/_form.html.erb (2.3ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#update as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.2ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+Processing by RowsController#create as HTML
+  Parameters: {"row"=>{}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Fri, 15 Mar 2013 12:04:57 UTC +00:00], ["updated_at", Fri, 15 Mar 2013 12:04:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+Processing by RowsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "rows" WHERE "rows"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows
+Completed 302 Found in 121ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRow Load (0.0ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered rows/_form.html.erb (1.8ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#index as HTML
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" [0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#new as HTML
+  Rendered rows/_form.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#update as HTML
+  Parameters: {"row"=>{}, "id"=>"980190962"}
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 15 Mar 2013 12:04:57 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 15 Mar 2013 12:04:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 45ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE "line_items"."shape_id" = 980190962
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (4.5ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-15 12:04:57.415977' WHERE "shapes"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-15 12:07:58', '2013-03-15 12:07:58', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-15 12:07:58', '2013-03-15 12:07:58', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "rows"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-15 12:07:58', '2013-03-15 12:07:58', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-15 12:07:58', '2013-03-15 12:07:58', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-15 12:07:58', '2013-03-15 12:07:58', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-15 12:07:58', '2013-03-15 12:07:58', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animal', '2013-03-15 12:07:58', '2013-03-15 12:07:58', 207281424)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GridController#index as HTML
+  [1m[35mShape Load (0.3ms)[0m  SELECT "shapes".* FROM "shapes" ORDER BY RANDOM() LIMIT 49
+  Rendered grid/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 111ms (Views: 100.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+Processing by LineItemsController#create as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (16.8ms)[0m  INSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Fri, 15 Mar 2013 12:07:58 UTC +00:00], ["updated_at", Fri, 15 Mar 2013 12:07:58 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 23ms
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+Processing by LineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered line_items/_form.html.erb (21.0ms)
+Completed 200 OK in 51ms (Views: 50.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#index as HTML
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" 
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#new as HTML
+  Rendered line_items/_form.html.erb (2.3ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#update as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+Processing by RowsController#create as HTML
+  Parameters: {"row"=>{}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Fri, 15 Mar 2013 12:07:58 UTC +00:00], ["updated_at", Fri, 15 Mar 2013 12:07:58 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+Processing by RowsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "rows" WHERE "rows"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows
+Completed 302 Found in 123ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRow Load (0.0ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered rows/_form.html.erb (1.9ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#index as HTML
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" [0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#new as HTML
+  Rendered rows/_form.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#update as HTML
+  Parameters: {"row"=>{}, "id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shapes" ("created_at", "image_url", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 15 Mar 2013 12:07:59 UTC +00:00], ["image_url", "lorem.jpg"], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Fri, 15 Mar 2013 12:07:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 47ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE "line_items"."shape_id" = 980190962
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (4.9ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-15 12:07:59.114519' WHERE "shapes"."id" = 980190962[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "cart_line_items"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:29:57', '2013-03-26 16:29:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:29:57', '2013-03-26 16:29:57', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "carts"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:29:57', '2013-03-26 16:29:57', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:29:57', '2013-03-26 16:29:57', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:29:57', '2013-03-26 16:29:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:29:57', '2013-03-26 16:29:57', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "rows"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:29:57', '2013-03-26 16:29:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:29:57', '2013-03-26 16:29:57', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-26 16:29:57', '2013-03-26 16:29:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-26 16:29:57', '2013-03-26 16:29:57', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animal', '2013-03-26 16:29:57', '2013-03-26 16:29:57', 207281424)[0m
+  [1m[35m (31.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.2ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 207281424]]
+Processing by CartLineItemsController#create as HTML
+  Parameters: {"shape_id"=>"207281424"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (35.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Tue, 26 Mar 2013 16:29:57 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:29:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "207281424"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (31.5ms)[0m  INSERT INTO "cart_line_items" ("cart_id", "created_at", "shape_id", "updated_at") VALUES (?, ?, ?, ?)  [["cart_id", 980190963], ["created_at", Tue, 26 Mar 2013 16:29:57 UTC +00:00], ["shape_id", 207281424], ["updated_at", Tue, 26 Mar 2013 16:29:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 980190963 LIMIT 1
+Redirected to http://test.host/carts/980190963
+Completed 302 Found in 225ms (ActiveRecord: 66.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+  [1m[35m (31.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+Processing by CartLineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.0ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "cart_line_items" WHERE "cart_line_items"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/cart_line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cart_line_items" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered cart_line_items/_form.html.erb (22.7ms)
+Completed 500 Internal Server Error in 162ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#index as HTML
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" 
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#new as HTML
+  Rendered cart_line_items/_form.html.erb (1.9ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#update as HTML
+  Parameters: {"cart_line_item"=>{"cart_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/cart_line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.2ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+Processing by CartsController#create as HTML
+  Parameters: {"cart"=>{}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/carts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+Processing by CartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."cart_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/carts
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered carts/_form.html.erb (1.9ms)
+Completed 500 Internal Server Error in 20ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.2ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#index as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" [0m
+Completed 500 Internal Server Error in 8ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#new as HTML
+  Rendered carts/_form.html.erb (1.3ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#update as HTML
+  Parameters: {"cart"=>{}, "id"=>"980190962"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/carts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by GridController#index as HTML
+  [1m[36mShape Load (0.3ms)[0m  [1mSELECT "shapes".* FROM "shapes" ORDER BY RANDOM() LIMIT 7[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190963[0m
+  Rendered collection (0.0ms)
+  Rendered rows/_row.html.erb (3.9ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+Processing by LineItemsController#create as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:29:58 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+Processing by LineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered line_items/_form.html.erb (3.5ms)
+Completed 500 Internal Server Error in 11ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#index as HTML
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" [0m
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#new as HTML
+  Rendered line_items/_form.html.erb (1.9ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#update as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "rows" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "rows" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendered rows/_form.html.erb (1.1ms)
+Completed 500 Internal Server Error in 4ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#index as HTML
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" [0m
+Completed 500 Internal Server Error in 12ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#new as HTML
+  Rendered rows/_form.html.erb (0.7ms)
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190962[0m
+  Rendered collection (0.0ms)
+  Rendered rows/_row.html.erb (0.5ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#update as HTML
+  Parameters: {"row"=>{}, "id"=>"980190962"}
+  [1m[36mRow Load (0.0ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/rows/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shapes/_form.html.erb (4.5ms)
+Completed 500 Internal Server Error in 55ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE "line_items"."shape_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "shapes" WHERE "shapes"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (3.4ms)
+Completed 500 Internal Server Error in 10ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" 
+Completed 500 Internal Server Error in 8ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (2.9ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shapes/_form.html.erb (3.6ms)
+Completed 500 Internal Server Error in 12ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "cart_line_items"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:31:05', '2013-03-26 16:31:05', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:31:05', '2013-03-26 16:31:05', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "carts"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:31:05', '2013-03-26 16:31:05', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:31:05', '2013-03-26 16:31:05', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:31:05', '2013-03-26 16:31:05', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 16:31:05', '2013-03-26 16:31:05', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "rows"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:31:05', '2013-03-26 16:31:05', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 16:31:05', '2013-03-26 16:31:05', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-26 16:31:05', '2013-03-26 16:31:05', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', '2013-03-26 16:31:05', '2013-03-26 16:31:05', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "shape_type", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animal', '2013-03-26 16:31:05', '2013-03-26 16:31:05', 207281424)[0m
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.2ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+Processing by CartLineItemsController#create as HTML
+  Parameters: {"cart_line_item"=>{"cart_id"=>"1", "shape_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 8ms
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cart_line_items" 
+Processing by CartLineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.0ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "cart_line_items" WHERE "cart_line_items"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/cart_line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered cart_line_items/_form.html.erb (7.6ms)
+Completed 500 Internal Server Error in 53ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#index as HTML
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" [0m
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#new as HTML
+  Rendered cart_line_items/_form.html.erb (1.8ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.0ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#update as HTML
+  Parameters: {"cart_line_item"=>{"cart_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/cart_line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "carts" 
+Processing by CartsController#create as HTML
+  Parameters: {"cart"=>{}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/carts/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "carts" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "carts" 
+Processing by CartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."cart_id" = 980190962[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "carts" WHERE "carts"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/carts
+Completed 302 Found in 48ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "carts" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered carts/_form.html.erb (1.7ms)
+Completed 500 Internal Server Error in 9ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#index as HTML
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" 
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#new as HTML
+  Rendered carts/_form.html.erb (1.1ms)
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#update as HTML
+  Parameters: {"cart"=>{}, "id"=>"980190962"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/carts/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GridController#index as HTML
+  [1m[35mShape Load (0.3ms)[0m  SELECT "shapes".* FROM "shapes" ORDER BY RANDOM() LIMIT 7
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190963
+  Rendered collection (0.0ms)
+  Rendered rows/_row.html.erb (3.8ms)
+Completed 200 OK in 48ms (Views: 12.5ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+Processing by LineItemsController#create as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 16:31:05 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 2ms
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+Processing by LineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered line_items/_form.html.erb (3.6ms)
+Completed 500 Internal Server Error in 11ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#index as HTML
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" 
+Completed 500 Internal Server Error in 28ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#new as HTML
+  Rendered line_items/_form.html.erb (2.1ms)
+Completed 500 Internal Server Error in 8ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#update as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.2ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rows" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendered rows/_form.html.erb (1.2ms)
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#index as HTML
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" 
+Completed 500 Internal Server Error in 8ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#new as HTML
+  Rendered rows/_form.html.erb (0.6ms)
+Completed 500 Internal Server Error in 2ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRow Load (0.0ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190962
+  Rendered collection (0.0ms)
+  Rendered rows/_row.html.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#update as HTML
+  Parameters: {"row"=>{}, "id"=>"980190962"}
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/rows/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.2ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shapes/_form.html.erb (4.6ms)
+Completed 500 Internal Server Error in 23ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.0ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE "line_items"."shape_id" = 980190962
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "shapes" WHERE "shapes"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/shapes
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (3.3ms)
+Completed 500 Internal Server Error in 9ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" [0m
+Completed 500 Internal Server Error in 8ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (3.1ms)
+Completed 500 Internal Server Error in 8ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "shape_type"=>"animal"}, "id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShape Exists (0.1ms)[0m  SELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shapes/_form.html.erb (3.8ms)
+Completed 500 Internal Server Error in 12ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "cart_line_items"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "cart_line_items" ("shape_id", "cart_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "carts"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 22:39:10', '2013-03-26 22:39:10', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at", "id") VALUES ('2013-03-26 22:39:10', '2013-03-26 22:39:10', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "line_items" ("shape_id", "row_id", "created_at", "updated_at", "id") VALUES (1, 1, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "rows"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 22:39:10', '2013-03-26 22:39:10', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at", "id") VALUES ('2013-03-26 22:39:10', '2013-03-26 22:39:10', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "shapes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "lrg_image_url", "shape_type", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', 'MyString', 9.99, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "shapes" ("title", "text", "text_type", "image_url", "lrg_image_url", "shape_type", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', 'MyString', 'MyString', 9.99, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "shapes" ("title", "text", "text_type", "image_url", "lrg_image_url", "shape_type", "price", "created_at", "updated_at", "id") VALUES ('animals_1', 'Keep your plans secret for now', 'fortune', 'animals_1.jpg', 'animals_lrg1.jpg', 'animal', 9.99, '2013-03-26 22:39:10', '2013-03-26 22:39:10', 207281424)[0m
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.2ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cart_line_items" [0m
+Processing by CartLineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "cart_line_items" WHERE "cart_line_items"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/cart_line_items
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cart_line_items" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCartLineItem Load (0.0ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered cart_line_items/_form.html.erb (22.6ms)
+Completed 200 OK in 110ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#index as HTML
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" 
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartLineItemsController#new as HTML
+  Rendered cart_line_items/_form.html.erb (2.1ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCartLineItem Load (0.1ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartLineItemsController#update as HTML
+  Parameters: {"cart_line_item"=>{"cart_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/cart_line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+Processing by CartsController#create as HTML
+  Parameters: {"cart"=>{}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (41.2ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 22:39:10 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 22:39:10 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/carts/980190963
+Completed 302 Found in 45ms (ActiveRecord: 41.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+Processing by CartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCartLineItem Load (0.2ms)[0m  SELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."cart_id" = 980190962
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/grid/tshirt?notice=Your+cart+is+currently+empty
+Completed 302 Found in 186ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "carts" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered carts/_form.html.erb (1.9ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#index as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" [0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#new as HTML
+  Rendered carts/_form.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mCartLineItem Load (0.1ms)[0m  [1mSELECT "cart_line_items".* FROM "cart_line_items" WHERE "cart_line_items"."cart_id" = 980190962[0m
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CartsController#update as HTML
+  Parameters: {"cart"=>{}, "id"=>"980190962"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/carts/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GridController#index as HTML
+  [1m[35mShape Load (0.3ms)[0m  SELECT "shapes".* FROM "shapes" ORDER BY RANDOM() LIMIT 7
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 52ms (Views: 14.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+Processing by LineItemsController#create as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rows" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00], ["updated_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" 
+Processing by LineItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_items
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered line_items/_form.html.erb (3.5ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#index as HTML
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" [0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LineItemsController#new as HTML
+  Rendered line_items/_form.html.erb (2.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LineItemsController#update as HTML
+  Parameters: {"line_item"=>{"row_id"=>"1", "shape_id"=>"1"}, "id"=>"980190962"}
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_items/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "rows" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "rows" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendered rows/_form.html.erb (24.1ms)
+Completed 500 Internal Server Error in 27ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#index as HTML
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" [0m
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#new as HTML
+  Rendered rows/_form.html.erb (1.2ms)
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRow Load (0.1ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by RowsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRow Load (0.0ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."row_id" = 980190962[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRow Load (0.1ms)[0m  SELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by RowsController#update as HTML
+  Parameters: {"row"=>{}, "id"=>"980190962"}
+  [1m[36mRow Load (0.0ms)[0m  [1mSELECT "rows".* FROM "rows" WHERE "rows"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/rows/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.2ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shapes" [0m
+Processing by ShapesController#create as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "lrg_image_url"=>"lorem.jpg", "shape_type"=>"animal", "price"=>"9.99"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE "shapes"."title" = 'Lorem Ipsum' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shapes" ("created_at", "image_url", "lrg_image_url", "price", "shape_type", "text", "text_type", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00], ["image_url", "lorem.jpg"], ["lrg_image_url", "lorem.jpg"], ["price", #<BigDecimal:7fd491deab08,'0.999E1',18(18)>], ["shape_type", "animal"], ["text", "Wibbles are fun!"], ["text_type", "fortune"], ["title", "Lorem Ipsum"], ["updated_at", Tue, 26 Mar 2013 22:39:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190963
+Completed 302 Found in 62ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+Processing by ShapesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE "line_items"."shape_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "shapes" WHERE "shapes"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shapes" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered shapes/_form.html.erb (6.0ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#index as HTML
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" 
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mShape Load (0.1ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ShapesController#new as HTML
+  Rendered shapes/_form.html.erb (4.5ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShape Load (0.1ms)[0m  SELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ShapesController#update as HTML
+  Parameters: {"shape"=>{"title"=>"Lorem Ipsum", "text"=>"Wibbles are fun!", "text_type"=>"fortune", "image_url"=>"lorem.jpg", "lrg_image_url"=>"lorem.jpg", "shape_type"=>"animal", "price"=>"9.99"}, "id"=>"980190962"}
+  [1m[36mShape Load (0.0ms)[0m  [1mSELECT "shapes".* FROM "shapes" WHERE "shapes"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShape Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "shapes" WHERE ("shapes"."title" = 'Lorem Ipsum' AND "shapes"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "shapes" SET "title" = 'Lorem Ipsum', "text" = 'Wibbles are fun!', "text_type" = 'fortune', "image_url" = 'lorem.jpg', "lrg_image_url" = 'lorem.jpg', "shape_type" = 'animal', "updated_at" = '2013-03-26 22:39:11.723273' WHERE "shapes"."id" = 980190962
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shapes/980190962
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  rollback transaction

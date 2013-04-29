@@ -1,0 +1,28 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  text: MyText
+  text_type: MyString
+  image_url: MyString
+  lrg_image_url: MyString
+  shape_type: MyString
+  price: 9.99
+
+two:
+  title: MyString
+  text: MyText
+  text_type: MyString
+  image_url: MyString
+  lrg_image_url: MyString
+  shape_type: MyString
+  price: 9.99
+
+ruby:
+  title: animals_1
+  text: Keep your plans secret for now
+  text_type: fortune
+  image_url: animals_1.jpg
+  lrg_image_url: animals_lrg1.jpg
+  shape_type: animal
+  price: 9.99

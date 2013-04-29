@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>So Random T-Shirts</title>
+
+  <%= stylesheet_link_tag    "application", media: "all" %><!-- <label id="code.slt"/> -->
+  <%= javascript_include_tag "application" %><!-- <label id="code.jlt"/> -->
+  <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
+</head>
+
+<body class="<%= controller.controller_name %>">
+
+<div id="main_wrapper">
+  <div id="sidebar_left">
+    <% if @cart %>
+    <%= hidden_div_if(@cart.cart_line_items.empty?, id: 'cart') do %>
+    <%= render 'layouts/cart' %>
+    <% end %>
+    <% end %>
+  </div>
+<div id="header">   <span class="header">
+
+  <%= @page_title || "So Random T-Shirts" %> <br> <br>
+      </span>
+     Logo here
+
+</div>
+
+
+  <div id="intro" class="intro">
+
+    To generate a selection of unique T-Shirts <br>
+    Please select 7 items from the below menus.<br>
+    Once you see a cool T-Shirt add it to the cart. <br>
+    Be careful! As when you try again it's gone! <br>
+    Also view T-Shirts others made with So Random!
+
+  </div>
+
+  <!--<div id="logo">-->
+    <!--logo-->
+  <!--</div>-->
+
+
+ <!--
+<div id="columns">
+  <div id="side">
+    <ul>
+      <li><a href="http://www....">Home</a></li>
+      <li><a href="http://www..../faq">Questions</a></li>
+      <li><a href="http://www..../news">News</a></li>
+      <li><a href="http://www..../contact">Contact</a></li>
+    </ul>
+  </div>
+  <div id="main">  -->
+  <div id="login">
+
+
+    <%= link_to "Sign Up", new_user_path %>
+    <!--<%= link_to "Login", login_path %>-->
+    <!--<%= link_to "Logout", logout_path %>-->
+
+    <!--<%= button_to "Sign Up", :controller => "users",  :action => "new" %>  -->
+
+
+
+    <% if logged_in? == false %>
+        <%= form_tag sessions_path do %>
+            <%= label_tag :email %><br>
+            <%= text_field_tag :email %>
+            <br/>
+            <%= label_tag :password %><br>
+            <%= password_field_tag :password %>
+            <%= submit_tag 'Login' %>
+        <% end %>
+
+    <% else %>
+        <b><%= current_user.email %> <br></b>
+        <%= button_to "Logout", logout_path, method: :get  %><br>
+    <% end %>
+
+
+
+
+        </div>
+
+  <div id="centre_wrapper">
+  <div id="nav_bar">
+    <ul>
+      <li><%= link_to "All", :controller => "grid",  :action => "index" %></li>
+      <li><%= link_to "Animals", :controller => "grid",  :action => "animals" %></li>
+      <li><%= link_to "Colours", :controller => "grid",  :action => "colours" %></li>
+      <li><%= link_to "Places", :controller => "grid",  :action => "places" %></li>
+      <li><%= link_to "Sky", :controller => "grid",  :action => "sky" %></li>
+      <li><%= link_to "Shapes", :controller => "grid",  :action => "shapes" %></li>
+      <li><%= link_to "Faces", :controller => "grid",  :action => "faces" %></li>
+      <li><%= link_to "Plants", :controller => "grid",  :action => "plants" %></li>
+      <li><%= link_to "Texture", :controller => "grid",  :action => "texture" %></li>
+    </ul>
+  </div>
+
+
+    <%= yield %><!-- <label id="code.depot.e.include"/> -->
+  <div id="below_main">
+    </div>
+    <div id="row"> <%= render 'layouts/row' %> </div>
+    <div id="phrase"> <span id="phrase_text">
+      <%= link_to "Click here to see your T-Shirt!", :controller => "grid",  :action => "tshirt" %> </span> <br>
+
+    </div>
+     </div>
+
+  <div id="sidebar_right">
+
+
+  </div>
+
+
+</div>
+
+
+</body>
+</html>

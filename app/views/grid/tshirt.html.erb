@@ -1,0 +1,70 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="main">
+
+  <div id="tshirt">
+
+            <div id="tshirt_lrg_image">
+              <% @shapes.each do |shape| %>
+                  <%= image_tag(shape.lrg_image_url) %>
+            </div>
+
+             <div id="tshirt_text">
+
+                   <span class="tshirt_text">
+                    <%= shape.text %>
+                   </span>
+            </div>
+
+         <% end %>
+
+
+  </div>
+
+  <div id="tshirt_control">
+    <div id="instruction">
+                <span class="tshirt_intro">A So Random T-Shirt!<br>
+                  You can try another! <br> Pick colours!  <br>
+             Then press Done </span>
+    </div>
+
+    <div id="try_again">
+      <span class="try_again">Try Again!</span>
+    </div>
+    <div id="try_again_btn">
+
+      <%= link_to image_tag("button_blue.png"), :controller => "grid",  :action => "tshirt" %>
+
+    </div>
+
+
+
+    <div id="color_change">
+
+    </div>
+
+    <div id="done">
+      <span class="try_again">Done</span>
+    </div>
+    <div id="done_btn">
+
+      <!--below will need to link to login if not logged in-->
+      <!--<%= link_to image_tag("button_pink.png"), :controller => "grid",  :action => "index" %>-->
+
+      <% @shapes.each do |shape| %>
+          <div class="entry">
+
+            <%= button_to 'Buy!', cart_line_items_path(shape_id: shape) %>
+
+            <!--<%= link_to image_tag("button_pink.png"), cart_line_items_path(shape_id: shape)%>-->
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+
+
+
+</div>

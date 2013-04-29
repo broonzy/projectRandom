@@ -1,0 +1,42 @@
+  <div id="main_padding">
+  <% if current_user and current_user.admin %>
+      <h2>Welcome Administrator</h2>
+      <b><%= current_user.email %></b>
+      <%=  Time.now %><br/> <br/>
+      <b> We have <%= @orders.to_a.length %> orders </b>
+
+  <% else %>
+      <h2>Welcome to So Random! </h2>
+      <b><%= current_user.email %></b>
+      <br/>
+      <br/>
+      would you like to edit your details?
+      <%= link_to 'Edit', edit_user_path(current_user) %>
+      <br/>
+      <br/>
+      <% if current_user and not current_user.admin %>
+
+          <div>
+            <fieldset>
+              <legend><h2>Your Orders</h2></legend>
+              <% @history.each do |order| %>
+                  <b>Name:</b> <%= order.name %> <br/>
+                  <b>Date of purchase:</b><%= order.created_at %> <br/>
+                  <b>Pay type:</b><%= order.pay_type %> <br/>
+                  <%= link_to 'Order Details', order %>  <br/>  <br/>
+              <% end %>
+              <% if current_user and not current_user.admin %>
+                  <p><%= will_paginate @history %></p>
+                  </fieldset>
+              <% end %>
+              </div>
+      <% end %>
+
+  <% end %>
+
+</div>
+
+
+
+
+

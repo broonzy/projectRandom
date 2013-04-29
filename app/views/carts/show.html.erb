@@ -1,0 +1,43 @@
+<div id="main">
+
+  <div id="tshirt_sml">
+
+    <div id="tshirt_sml_image" class="sml_image">
+
+      <% @cart.cart_line_items.each do |item| %>
+
+
+          <%= image_tag(item.shape.lrg_image_url) %></td>
+    </div>
+
+    <div id="tshirt_sml_text">
+        <span class="tshirt_sml_text">
+          <td><%= item.shape.text %>
+          </span>
+    </div>
+      <% end %>
+  </div>
+
+
+  <div id="tshirt_control">
+
+
+  <h2>Your Cart</h2>
+  <table>
+    <%= render(@cart.cart_line_items) %>
+
+
+    <tr class="total_line">
+      <td colspan="2">Total</td>
+      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+
+  </table>
+
+    <%= button_to "Checkout", new_order_path, method: :get %>
+  <%= button_to 'Empty cart', @cart, method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
+  </div>
+
+</div>

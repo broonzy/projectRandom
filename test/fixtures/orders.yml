@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Gerry Daly
+  address: MyText
+  email: ger@example.org
+  size: Medium
+  pay_type: Cheque
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  size: MyString
+  pay_type: MyString

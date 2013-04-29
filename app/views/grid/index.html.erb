@@ -1,0 +1,13 @@
+
+<div id="main">
+
+  <% @shapes.each do |shape| %>
+      <div class="entry">
+
+        <%= link_to image_tag(shape.image_url), line_items_path(:shape_id => shape), :method => :post, remote: true %>
+
+
+      </div>
+  <% end %>
+
+</div>

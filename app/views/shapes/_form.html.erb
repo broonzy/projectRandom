@@ -1,0 +1,48 @@
+<%= form_for(@shape) do |f| %>
+  <% if @shape.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shape.errors.count, "error") %> prohibited this shape from being saved:</h2>
+
+      <ul>
+      <% @shape.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_area :text , rows:1 %>
+  </div>
+  <div class="field">
+    <%= f.label :text_type %><br />
+    <%= f.text_field :text_type %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :shape_type %><br />
+    <%= f.text_field :shape_type %>
+  </div>
+
+    <div class="field">
+      <%= f.label :lrg_image_url %><br />
+      <%= f.text_field :lrg_image_url %>
+    </div>
+
+    <div class="field">
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
